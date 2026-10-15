@@ -1,0 +1,60 @@
+/* Fonts load via <link> in docusaurus.config stylesheets (preconnect + display=swap). */
+:root {
+  --paper: #FAFAF6;
+  --ink: #111111;
+  --bau-red: #D42A1E;
+  --bau-blue: #2140D4;
+  --bau-yellow: #F2B705;
+  --stage: #111111;
+  --ifm-color-primary: #2140D4;
+  --ifm-color-primary-dark: #1a34ad;
+  --ifm-color-primary-darker: #182fa3;
+  --ifm-color-primary-darkest: #142786;
+  --ifm-color-primary-light: #324fc9;
+  --ifm-color-primary-lighter: #4a63d4;
+  --ifm-color-primary-lightest: #6f83dd;
+  --ifm-background-color: #FAFAF6;
+  --ifm-font-family-base: 'Space Grotesk', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Archivo Black', 'Space Grotesk', sans-serif;
+  --ifm-code-font-size: 95%;
+}
+
+html, body { background: var(--paper); color: var(--ink); }
+.main-wrapper { background: var(--paper); }
+article { max-width: 62ch; }
+
+h1, h2 { font-family: var(--ifm-heading-font-family); letter-spacing: -0.02em; line-height: 1; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
+a { text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--bau-blue); outline-offset: 2px; }
+
+/* Marker blocks: no rounded SaaS cards, hard edges, color encodes role */
+.ar-note {
+  direction: rtl; text-align: right;
+  background: #fff; color: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 12px 16px; margin: 1.2rem 0; line-height: 2;
+  font-family: 'Amiri', serif; font-size: 1.05rem;
+}
+.jordan-note { background: var(--bau-blue); color: #fff; border: 3px solid var(--ink); padding: 12px 16px; margin: 1.2rem 0; }
+.book-only { background: var(--bau-yellow); border: 3px solid var(--ink); padding: 12px 16px; margin: 1.2rem 0; }
+.check-block { background: var(--stage); color: #fff; border: 3px solid var(--ink); padding: 12px 16px; margin: 1.2rem 0; }
+.check-block code { color: var(--bau-yellow); }
+.typo-flag { background: var(--bau-red); color: #fff; border: 3px solid var(--ink); padding: 12px 16px; margin: 1.2rem 0; }
+
+/* MechStage sim shell: black viewport, boxed controls */
+.mech-stage { background: var(--stage); border: 3px solid var(--ink); padding: 16px; margin: 1.2rem 0; color: #fff; }
+.mech-stage svg { width: 100%; height: 260px; display: block; background: #0c0c0c; }
+.mech-stage input[type='range'] { width: 100%; accent-color: var(--bau-yellow); }
+.mech-stage .readout { font-variant-numeric: tabular-nums; color: var(--bau-yellow); }
+
+.footer--dark { background: var(--stage); }
+.navbar { background: var(--paper); border-bottom: 3px solid var(--ink); }
+
+@media (max-width: 768px) {
+  .ar-note { box-shadow: 4px 4px 0 var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none; transition: none; }
+}
